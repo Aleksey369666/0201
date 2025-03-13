@@ -1,0 +1,437 @@
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset: enabled)
+     Active: active (running) since Thu 2025-03-13 13:35:56 +07; 44s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 21754 (dockerd)
+      Tasks: 9
+     Memory: 22.7M
+        CPU: 520ms
+     CGroup: /system.slice/docker.service
+             └─21754 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+
+мар 13 13:35:47 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:47.173360547+07:00" level=info msg="OTEL tracing is not confi>
+мар 13 13:35:47 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:47.174424160+07:00" level=info msg="detected 127.0.0.53 names>
+мар 13 13:35:49 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:49.600057840+07:00" level=info msg="Loading containers: start>
+мар 13 13:35:53 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:53.142845994+07:00" level=info msg="Loading containers: done."
+мар 13 13:35:53 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:53.926171281+07:00" level=info msg="Docker daemon" commit=bbd>
+мар 13 13:35:53 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:53.926474522+07:00" level=info msg="Initializing buildkit"
+мар 13 13:35:56 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:56.211378773+07:00" level=info msg="Completed buildkit initia>
+мар 13 13:35:56 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:56.239952554+07:00" level=info msg="Daemon has completed init>
+мар 13 13:35:56 u20-VirtualBox dockerd[21754]: time="2025-03-13T13:35:56.240286280+07:00" level=info msg="API listen on /run/docker>
+мар 13 13:35:56 u20-VirtualBox systemd[1]: Started Docker Application Container Engine.
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+~
+u20@u20-VirtualBox:~$ docker
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx
+  checkpoint  Manage checkpoints
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  config      Manage Swarm configs
+  node        Manage Swarm nodes
+  secret      Manage Swarm secrets
+  service     Manage Swarm services
+  stack       Manage Swarm stacks
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/home/u20/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default
+                           context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/u20/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/u20/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/u20/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+u20@u20-VirtualBox:~$ sudo usermod -aG docker $USER
+u20@u20-VirtualBox:~$ newgrp docker
+u20@u20-VirtualBox:~$ sudo apt-get install docker -compose
+W: Невозможно прочитать ompose - open (2: Нет такого файла или каталога)
+u20@u20-VirtualBox:~$ sudo apt-get install docker-compose
+Чтение списков пакетов… Готово
+Построение дерева зависимостей… Готово
+Чтение информации о состоянии… Готово         
+Будут установлены следующие дополнительные пакеты:
+  python3-attr python3-distutils python3-docker python3-dockerpty python3-docopt python3-dotenv python3-jsonschema python3-lib2to3
+  python3-pkg-resources python3-pyrsistent python3-setuptools python3-texttable python3-websocket
+Предлагаемые пакеты:
+  python-attr-doc python-jsonschema-doc python-setuptools-doc
+Рекомендуемые пакеты:
+  docker.io
+Следующие НОВЫЕ пакеты будут установлены:
+  docker-compose python3-attr python3-distutils python3-docker python3-dockerpty python3-docopt python3-dotenv python3-jsonschema
+  python3-lib2to3 python3-pyrsistent python3-setuptools python3-texttable python3-websocket
+Следующие пакеты будут обновлены:
+  python3-pkg-resources
+Обновлено 1 пакетов, установлено 13 новых пакетов, для удаления отмечено 0 пакетов, и 285 пакетов не обновлено.
+Необходимо скачать 1 121 kB архивов.
+После данной операции объём занятого дискового пространства возрастёт на 5 241 kB.
+Хотите продолжить? [Д/н] Д
+Пол:1 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-pkg-resources all 59.6.0-1.2ubuntu0.22.04.2 [133 kB]
+Пол:2 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-lib2to3 all 3.10.8-1~22.04 [77,6 kB]
+Пол:3 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-distutils all 3.10.8-1~22.04 [139 kB]
+Пол:4 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-websocket all 1.2.3-1 [34,7 kB]
+Пол:5 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-docker all 5.0.3-1 [89,3 kB]
+Пол:6 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-dockerpty all 0.4.1-2 [11,1 kB]
+Пол:7 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-docopt all 0.6.2-4 [26,9 kB]
+Пол:8 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-dotenv all 0.19.2-1 [20,5 kB]
+Пол:9 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 python3-attr all 21.2.0-1 [44,0 kB]
+Пол:10 http://ru.archive.ubuntu.com/ubuntu jammy-updates/main amd64 python3-setuptools all 59.6.0-1.2ubuntu0.22.04.2 [340 kB]
+Пол:11 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 python3-pyrsistent amd64 0.18.1-1build1 [55,5 kB]
+Пол:12 http://ru.archive.ubuntu.com/ubuntu jammy/main amd64 python3-jsonschema all 3.2.0-0ubuntu2 [43,1 kB]
+Пол:13 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 python3-texttable all 1.6.4-1 [11,4 kB]
+Пол:14 http://ru.archive.ubuntu.com/ubuntu jammy/universe amd64 docker-compose all 1.29.2-1 [95,8 kB]
+Получено 1 121 kB за 1с (1 587 kB/s)            
+(Чтение базы данных … на данный момент установлено 181752 файла и каталога.)
+Подготовка к распаковке …/00-python3-pkg-resources_59.6.0-1.2ubuntu0.22.04.2_all.deb …
+Распаковывается python3-pkg-resources (59.6.0-1.2ubuntu0.22.04.2) на замену (59.6.0-1.2ubuntu0.22.04.1) …
+Выбор ранее не выбранного пакета python3-lib2to3.
+Подготовка к распаковке …/01-python3-lib2to3_3.10.8-1~22.04_all.deb …
+Распаковывается python3-lib2to3 (3.10.8-1~22.04) …
+Выбор ранее не выбранного пакета python3-distutils.
+Подготовка к распаковке …/02-python3-distutils_3.10.8-1~22.04_all.deb …
+Распаковывается python3-distutils (3.10.8-1~22.04) …
+Выбор ранее не выбранного пакета python3-websocket.
+Подготовка к распаковке …/03-python3-websocket_1.2.3-1_all.deb …
+Распаковывается python3-websocket (1.2.3-1) …
+Выбор ранее не выбранного пакета python3-docker.
+Подготовка к распаковке …/04-python3-docker_5.0.3-1_all.deb …
+Распаковывается python3-docker (5.0.3-1) …
+Выбор ранее не выбранного пакета python3-dockerpty.
+Подготовка к распаковке …/05-python3-dockerpty_0.4.1-2_all.deb …
+Распаковывается python3-dockerpty (0.4.1-2) …
+Выбор ранее не выбранного пакета python3-docopt.
+Подготовка к распаковке …/06-python3-docopt_0.6.2-4_all.deb …
+Распаковывается python3-docopt (0.6.2-4) …
+Выбор ранее не выбранного пакета python3-dotenv.
+Подготовка к распаковке …/07-python3-dotenv_0.19.2-1_all.deb …
+Распаковывается python3-dotenv (0.19.2-1) …
+Выбор ранее не выбранного пакета python3-attr.
+Подготовка к распаковке …/08-python3-attr_21.2.0-1_all.deb …
+Распаковывается python3-attr (21.2.0-1) …
+Выбор ранее не выбранного пакета python3-setuptools.
+Подготовка к распаковке …/09-python3-setuptools_59.6.0-1.2ubuntu0.22.04.2_all.deb …
+Распаковывается python3-setuptools (59.6.0-1.2ubuntu0.22.04.2) …
+Выбор ранее не выбранного пакета python3-pyrsistent:amd64.
+Подготовка к распаковке …/10-python3-pyrsistent_0.18.1-1build1_amd64.deb …
+Распаковывается python3-pyrsistent:amd64 (0.18.1-1build1) …
+Выбор ранее не выбранного пакета python3-jsonschema.
+Подготовка к распаковке …/11-python3-jsonschema_3.2.0-0ubuntu2_all.deb …
+Распаковывается python3-jsonschema (3.2.0-0ubuntu2) …
+Выбор ранее не выбранного пакета python3-texttable.
+Подготовка к распаковке …/12-python3-texttable_1.6.4-1_all.deb …
+Распаковывается python3-texttable (1.6.4-1) …
+Выбор ранее не выбранного пакета docker-compose.
+Подготовка к распаковке …/13-docker-compose_1.29.2-1_all.deb …
+Распаковывается docker-compose (1.29.2-1) …
+Настраивается пакет python3-dotenv (0.19.2-1) …
+Настраивается пакет python3-pkg-resources (59.6.0-1.2ubuntu0.22.04.2) …
+Настраивается пакет python3-attr (21.2.0-1) …
+Настраивается пакет python3-texttable (1.6.4-1) …
+Настраивается пакет python3-docopt (0.6.2-4) …
+Настраивается пакет python3-pyrsistent:amd64 (0.18.1-1build1) …
+Настраивается пакет python3-lib2to3 (3.10.8-1~22.04) …
+Настраивается пакет python3-websocket (1.2.3-1) …
+Настраивается пакет python3-dockerpty (0.4.1-2) …
+Настраивается пакет python3-distutils (3.10.8-1~22.04) …
+Настраивается пакет python3-setuptools (59.6.0-1.2ubuntu0.22.04.2) …
+Настраивается пакет python3-docker (5.0.3-1) …
+Настраивается пакет python3-jsonschema (3.2.0-0ubuntu2) …
+Настраивается пакет docker-compose (1.29.2-1) …
+Обрабатываются триггеры для man-db (2.10.2-1) …
+u20@u20-VirtualBox:~$ docker compose version
+Docker Compose version v2.33.1
+u20@u20-VirtualBox:~$ docker
+Usage:  docker [OPTIONS] COMMAND
+
+A self-sufficient runtime for containers
+
+Common Commands:
+  run         Create and run a new container from an image
+  exec        Execute a command in a running container
+  ps          List containers
+  build       Build an image from a Dockerfile
+  pull        Download an image from a registry
+  push        Upload an image to a registry
+  images      List images
+  login       Authenticate to a registry
+  logout      Log out from a registry
+  search      Search Docker Hub for images
+  version     Show the Docker version information
+  info        Display system-wide information
+
+Management Commands:
+  builder     Manage builds
+  buildx*     Docker Buildx
+  compose*    Docker Compose
+  container   Manage containers
+  context     Manage contexts
+  image       Manage images
+  manifest    Manage Docker image manifests and manifest lists
+  network     Manage networks
+  plugin      Manage plugins
+  system      Manage Docker
+  trust       Manage trust on Docker images
+  volume      Manage volumes
+
+Swarm Commands:
+  swarm       Manage Swarm
+
+Commands:
+  attach      Attach local standard input, output, and error streams to a running container
+  commit      Create a new image from a container's changes
+  cp          Copy files/folders between a container and the local filesystem
+  create      Create a new container
+  diff        Inspect changes to files or directories on a container's filesystem
+  events      Get real time events from the server
+  export      Export a container's filesystem as a tar archive
+  history     Show the history of an image
+  import      Import the contents from a tarball to create a filesystem image
+  inspect     Return low-level information on Docker objects
+  kill        Kill one or more running containers
+  load        Load an image from a tar archive or STDIN
+  logs        Fetch the logs of a container
+  pause       Pause all processes within one or more containers
+  port        List port mappings or a specific mapping for the container
+  rename      Rename a container
+  restart     Restart one or more containers
+  rm          Remove one or more containers
+  rmi         Remove one or more images
+  save        Save one or more images to a tar archive (streamed to STDOUT by default)
+  start       Start one or more stopped containers
+  stats       Display a live stream of container(s) resource usage statistics
+  stop        Stop one or more running containers
+  tag         Create a tag TARGET_IMAGE that refers to SOURCE_IMAGE
+  top         Display the running processes of a container
+  unpause     Unpause all processes within one or more containers
+  update      Update configuration of one or more containers
+  wait        Block until one or more containers stop, then print their exit codes
+
+Global Options:
+      --config string      Location of client config files (default "/home/u20/.docker")
+  -c, --context string     Name of the context to use to connect to the daemon (overrides DOCKER_HOST env var and default
+                           context set with "docker context use")
+  -D, --debug              Enable debug mode
+  -H, --host list          Daemon socket to connect to
+  -l, --log-level string   Set the logging level ("debug", "info", "warn", "error", "fatal") (default "info")
+      --tls                Use TLS; implied by --tlsverify
+      --tlscacert string   Trust certs signed only by this CA (default "/home/u20/.docker/ca.pem")
+      --tlscert string     Path to TLS certificate file (default "/home/u20/.docker/cert.pem")
+      --tlskey string      Path to TLS key file (default "/home/u20/.docker/key.pem")
+      --tlsverify          Use TLS and verify the remote
+  -v, --version            Print version information and quit
+
+Run 'docker COMMAND --help' for more information on a command.
+
+For more help on how to use Docker, head to https://docs.docker.com/go/guides/
+u20@u20-VirtualBox:~$ docker searcl 
+docker: unknown command: docker searcl
+
+Run 'docker --help' for more information
+u20@u20-VirtualBox:~$ 
+u20@u20-VirtualBox:~$ docker search ubuntu
+NAME                             DESCRIPTION                                     STARS     OFFICIAL
+ubuntu                           Ubuntu is a Debian-based Linux operating sys…   17496     [OK]
+ubuntu/squid                     Squid is a caching proxy for the Web. Long-t…   107       
+ubuntu/nginx                     Nginx, a high-performance reverse proxy & we…   127       
+ubuntu/cortex                    Cortex provides storage for Prometheus. Long…   4         
+ubuntu/kafka                     Apache Kafka, a distributed event streaming …   53        
+ubuntu/prometheus                Prometheus is a systems and service monitori…   70        
+ubuntu/apache2                   Apache, a secure & extensible open-source HT…   90        
+ubuntu/bind9                     BIND 9 is a very flexible, full-featured DNS…   102       
+ubuntu/zookeeper                 ZooKeeper maintains configuration informatio…   13        
+ubuntu/mysql                     MySQL open source fast, stable, multi-thread…   67        
+ubuntu/redis                     Redis, an open source key-value store. Long-…   23        
+ubuntu/postgres                  PostgreSQL is an open source object-relation…   41        
+ubuntu/jre                       Distroless Java runtime based on Ubuntu. Lon…   19        
+ubuntu/dotnet-aspnet             Chiselled Ubuntu runtime image for ASP.NET a…   25        
+ubuntu/cassandra                 Cassandra, an open source NoSQL distributed …   2         
+ubuntu/memcached                 Memcached, in-memory keyvalue store for smal…   5         
+ubuntu/grafana                   Grafana, a feature rich metrics dashboard & …   12        
+ubuntu/python                    A chiselled Ubuntu rock with the Python runt…   20        
+ubuntu/dotnet-runtime            Chiselled Ubuntu runtime image for .NET apps…   20        
+ubuntu/prometheus-alertmanager   Alertmanager handles client alerts from Prom…   9         
+ubuntu/dotnet-deps               Chiselled Ubuntu for self-contained .NET & A…   16        
+ubuntu/mlflow                    MLFlow: for managing the machine learning li…   5         
+ubuntu/telegraf                  Telegraf collects, processes, aggregates & w…   4         
+ubuntu/loki                      Grafana Loki, a log aggregation system like …   2         
+ubuntu/chiselled-jre             [MOVED TO ubuntu/jre] Chiselled JRE: distrol…   3         
+u20@u20-VirtualBox:~$ docker pull ubuntu:12.0
+Error response from daemon: manifest for ubuntu:12.0 not found: manifest unknown: manifest unknown
+u20@u20-VirtualBox:~$ docker pull ubuntu:12
+
+Error response from daemon: manifest for ubuntu:12 not found: manifest unknown: manifest unknown
+u20@u20-VirtualBox:~$ 
+u20@u20-VirtualBox:~$ docker pull ubuntu: 12
+docker: 'docker pull' requires 1 argument
+
+Usage:  docker pull [OPTIONS] NAME[:TAG|@DIGEST]
+
+Run 'docker pull --help' for more information
+u20@u20-VirtualBox:~$ docker pull ubuntu:12.04 
+12.04: Pulling from library/ubuntu
+d8868e50ac4c: Pull complete 
+83251ac64627: Pull complete 
+589bba2f1b36: Pull complete 
+d62ecaceda39: Pull complete 
+6d93b41cfc6b: Pull complete 
+Digest: sha256:18305429afa14ea462f810146ba44d4363ae76e4c8dfc38288cf73aa07485005
+Status: Downloaded newer image for ubuntu:12.04
+docker.io/library/ubuntu:12.04
+u20@u20-VirtualBox:~$ docker images
+REPOSITORY   TAG       IMAGE ID       CREATED       SIZE
+ubuntu       12.04     5b117edd0b76   7 years ago   104MB
+u20@u20-VirtualBox:~$ docker run  ubuntu:12.04
+u20@u20-VirtualBox:~$ docker run ubuntu:12.04
+u20@u20-VirtualBox:~$ docker run -it5b117edd0b76 
+unknown shorthand flag: '5' in -5b117edd0b76
+
+Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+Run 'docker run --help' for more information
+u20@u20-VirtualBox:~$ docker run -it 5b117edd0b76 
+root@d2ade8a61b75:/# docker run -it tomcat
+bash: docker: command not found
+root@d2ade8a61b75:/# exit                 
+exit
+
+u20@u20-VirtualBox:~$ docker run -it tomcat
+Unable to find image 'tomcat:latest' locally
+latest: Pulling from library/tomcat
+5a7813e071bf: Pull complete 
+8dbbbc6af9dc: Pull complete 
+a10b6847b9f1: Pull complete 
+dcc1c5ea3c7d: Pull complete 
+91e6cc55403a: Pull complete 
+5d4660d0a9e9: Pull complete 
+4f4fb700ef54: Pull complete 
+e231914ca483: Pull complete 
+Digest: sha256:1374a565d5122fdb42807f3a5f2d4fcc245a5e15420ff5bb5123afedc8ef769d
+Status: Downloaded newer image for tomcat:latest
+Using CATALINA_BASE:   /usr/local/tomcat
+Using CATALINA_HOME:   /usr/local/tomcat
+Using CATALINA_TMPDIR: /usr/local/tomcat/temp
+Using JRE_HOME:        /opt/java/openjdk
+Using CLASSPATH:       /usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+13-Mar-2025 07:13:00.952 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/11.0.5
+13-Mar-2025 07:13:00.962 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          Feb 28 2025 15:54:41 UTC
+13-Mar-2025 07:13:00.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 11.0.5.0
+13-Mar-2025 07:13:00.963 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+13-Mar-2025 07:13:00.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            6.8.0-52-generic
+13-Mar-2025 07:13:00.964 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+13-Mar-2025 07:13:00.965 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+13-Mar-2025 07:13:00.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           21.0.6+7-LTS
+13-Mar-2025 07:13:00.966 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+13-Mar-2025 07:13:00.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+13-Mar-2025 07:13:00.967 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+13-Mar-2025 07:13:01.005 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+13-Mar-2025 07:13:01.006 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+13-Mar-2025 07:13:01.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+13-Mar-2025 07:13:01.008 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+13-Mar-2025 07:13:01.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+13-Mar-2025 07:13:01.010 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang.reflect=ALL-UNNAMED
+13-Mar-2025 07:13:01.011 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+13-Mar-2025 07:13:01.011 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+13-Mar-2025 07:13:01.011 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+13-Mar-2025 07:13:01.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+13-Mar-2025 07:13:01.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --enable-native-access=ALL-UNNAMED
+13-Mar-2025 07:13:01.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+13-Mar-2025 07:13:01.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+13-Mar-2025 07:13:01.016 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+13-Mar-2025 07:13:01.024 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.8] using APR version [1.7.2].
+13-Mar-2025 07:13:01.039 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.13 30 Jan 2024]
+13-Mar-2025 07:13:01.605 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+13-Mar-2025 07:13:01.661 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [957] milliseconds
+13-Mar-2025 07:13:01.745 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+13-Mar-2025 07:13:01.746 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/11.0.5]
+13-Mar-2025 07:13:01.782 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+13-Mar-2025 07:13:01.820 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [157] milliseconds
+
+^C13-Mar-2025 07:24:19.231 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+13-Mar-2025 07:24:19.295 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+13-Mar-2025 07:24:19.339 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+13-Mar-2025 07:24:19.376 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
