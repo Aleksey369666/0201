@@ -1,0 +1,132 @@
+u20@u20-VirtualBox:~$ docker network inspect my192_N1
+[
+    {
+        "Name": "my192_N1",
+        "Id": "cd0369c7c4009ecc70d7a9252acfa94ad914b8785fef19656e2f0b627c8bc8cf",
+        "Created": "2025-04-10T13:56:12.305954944+07:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "192.168.12.0/26",
+                    "Gateway": "192.168.12.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
+u20@u20-VirtualBox:~$ docker network inspect my192_N2
+[
+    {
+        "Name": "my192_N2",
+        "Id": "4868febe61353ef524f0504ba78274c17277c181aba87d4a2d257c446330c489",
+        "Created": "2025-04-10T13:57:58.299481917+07:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "192.168.12.64/26",
+                    "Gateway": "192.168.12.65"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
+u20@u20-VirtualBox:~$ docker network inspect my192_N3
+[
+    {
+        "Name": "my192_N3",
+        "Id": "f58f0d3521c817b4208c1eae56bffb28dc1e7288a09bc255084cc4a96737f254",
+        "Created": "2025-04-10T14:05:34.924063847+07:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "192.168.12.128/27",
+                    "Gateway": "192.168.12.129"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
+u20@u20-VirtualBox:~$ docker network inspect my192_N4
+[
+    {
+        "Name": "my192_N4",
+        "Id": "2cc2e63393b5aa634817012cd09552465d631e9f1f24564736d18c13bfc661c2",
+        "Created": "2025-04-10T14:07:03.135111981+07:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "192.168.12.160/28",
+                    "Gateway": "192.168.12.161"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Containers": {},
+        "Options": {},
+        "Labels": {}
+    }
+]
+u20@u20-VirtualBox:~$ docker run -itd --net my_bridge --name cont3 --rm alpine
+805874c118d354c93636fc804ebaa7dd5ec9cf23253f01f21c9de9eee2688f2a
+u20@u20-VirtualBox:~$ docker run -itd --net my_bridge --name cont4 --rm alpine
+e69f14b9352dc34191b2facd45c17655bfd330d311c9f89dd503c3a4dffe0a42
