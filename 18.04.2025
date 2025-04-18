@@ -1,0 +1,82 @@
+u20@u20-VirtualBox:~$ sudo systemctl status docker
+[sudo] пароль для u20: 
+● docker.service - Docker Application Container Engine
+     Loaded: loaded (/lib/systemd/system/docker.service; enabled; vendor preset>
+     Active: active (running) since Fri 2025-04-18 15:32:13 +07; 1min 11s ago
+TriggeredBy: ● docker.socket
+       Docs: https://docs.docker.com
+   Main PID: 930 (dockerd)
+      Tasks: 31
+     Memory: 116.5M
+        CPU: 1.522s
+     CGroup: /system.slice/docker.service
+             └─930 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/conta>
+
+апр 18 15:32:09 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:09.23465873>
+апр 18 15:32:09 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:09.23470335>
+апр 18 15:32:09 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:09.23473975>
+апр 18 15:32:09 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:09.23748755>
+апр 18 15:32:11 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:11.96503144>
+апр 18 15:32:11 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:11.99404238>
+апр 18 15:32:13 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:13.73148030>
+апр 18 15:32:13 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:13.76824665>
+апр 18 15:32:13 u20-VirtualBox dockerd[930]: time="2025-04-18T15:32:13.76832294>
+апр 18 15:32:13 u20-VirtualBox systemd[1]: Started Docker Application Container>
+lines 1-22/22 (END)
+20@u20-VirtualBox:~$ ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:8b:3a:0c brd ff:ff:ff:ff:ff:ff
+    inet 10.0.2.15/24 metric 100 brd 10.0.2.255 scope global dynamic enp0s3
+       valid_lft 85944sec preferred_lft 85944sec
+    inet6 fe80::a00:27ff:fe8b:3a0c/64 scope link 
+       valid_lft forever preferred_lft forever
+3: enp0s8: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 08:00:27:ce:eb:b9 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.20.1/24 brd 192.168.20.255 scope global enp0s8
+       valid_lft forever preferred_lft forever
+    inet6 fe80::a00:27ff:fece:ebb9/64 scope link 
+       valid_lft forever preferred_lft forever
+4: br-531b41441d7a: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether a6:54:1d:ba:da:e7 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.30.1/24 brd 192.168.30.255 scope global br-531b41441d7a
+       valid_lft forever preferred_lft forever
+5: br-6476decfa248: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 5e:35:71:36:6c:b8 brd ff:ff:ff:ff:ff:ff
+    inet 172.18.0.1/16 brd 172.18.255.255 scope global br-6476decfa248
+       valid_lft forever preferred_lft forever
+6: br-cd0369c7c400: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether ae:fa:57:f9:55:f8 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.12.1/26 brd 192.168.12.63 scope global br-cd0369c7c400
+       valid_lft forever preferred_lft forever
+7: br-ed9159e8c9aa: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 4a:1a:db:ac:93:1e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.20.1/24 brd 192.168.20.255 scope global br-ed9159e8c9aa
+       valid_lft forever preferred_lft forever
+8: br-f58f0d3521c8: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether e2:01:b5:b2:54:85 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.12.129/27 brd 192.168.12.159 scope global br-f58f0d3521c8
+       valid_lft forever preferred_lft forever
+9: br-f92daa82b17b: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 86:cf:44:b0:19:b7 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.40.1/24 brd 192.168.40.255 scope global br-f92daa82b17b
+       valid_lft forever preferred_lft forever
+10: br-4868febe6135: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 46:ad:a7:f1:8b:7e brd ff:ff:ff:ff:ff:ff
+    inet 192.168.12.65/26 brd 192.168.12.127 scope global br-4868febe6135
+       valid_lft forever preferred_lft forever
+11: docker0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 9a:9f:a5:a9:04:1e brd ff:ff:ff:ff:ff:ff
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+       valid_lft forever preferred_lft forever
+12: br-2cc2e63393b5: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc noqueue state DOWN group default 
+    link/ether 3e:da:6a:58:82:a4 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.12.161/28 brd 192.168.12.175 scope global br-2cc2e63393b5
+       valid_lft forever preferred_lft forever
+проблема в конечной задаче почему то не может загрузить веб-страницу но не выдает ошибку думаю дело в контейнере
+ошибка в том что разные номера сетей у сервера и клиетов
