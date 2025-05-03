@@ -1,0 +1,17 @@
+lesha@lesha22:~$ sudo fdisk -l /dev/sdd
+[sudo] password for lesha: 
+Disk /dev/sdd: 5 GiB, 5368709120 bytes, 10485760 sectors
+Disk model: VBOX HARDDISK   
+Units: sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+I/O size (minimum/optimal): 512 bytes / 512 bytes
+Disklabel type: gpt
+Disk identifier: E885F1B5-9BA4-4BAB-9D8A-9B39C6E6178C
+
+Device       Start      End Sectors  Size Type
+/dev/sdd1  1050624  2099199 1048576  512M Linux filesystem
+/dev/sdd2  2099200  3147775 1048576  512M Linux filesystem
+/dev/sdd3  3147776  4196351 1048576  512M Linux LVM
+/dev/sdd4  4196352  6293503 2097152    1G Linux LVM
+/dev/sdd5  6293504 10485726 4192223    2G Linux filesystem
+lesha@lesha22:~$ 
